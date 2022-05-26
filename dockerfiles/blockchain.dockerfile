@@ -1,13 +1,13 @@
 
-FROM ubuntu
+FROM python:3.10
 
-WORKDIR /home/zfoteff/github/blockchain
+WORKDIR /blockchain
 
-RUN echo "[+] Image Up"
+RUN echo "[+] Blockchain Image Running"
 
-RUN apt-get update
+COPY /home/zfoteff/github/blockchain/requirements.txt /blockchain/requirements.txt
 
-RUN 
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 #   Copy all files from the project directory
-COPY . ~/github/blockchain
+COPY /home/zfoteff/github/blockchain/ /blockchain/ 
